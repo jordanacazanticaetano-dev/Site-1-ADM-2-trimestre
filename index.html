@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meu blog</title>
+    <title>Meu Blog</title>
 <style>
-  header{
+  header {
     background-color: rgba(186, 195, 200, 0.531);
     color: rgb(0, 0, 1);
     text-align: center;
-    max-width: 800;
+    max-width: 800px;
     margin: 0 auto;
     padding: 16px;
   }
@@ -18,64 +18,78 @@
     background-color: rgba(203, 249, 247, 0.402);
     color: black;
     text-align: center;
-    max-width: 800;
+    max-width: 800px;
     margin: 0 auto;
     padding: 16px;
-    display: flex;
   }
 
-img{
-width: 80px;
-height: 80px;
-}
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
 
-.artigo-autor{
-  font-weight: bold;
-}
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 
+  .artigo-autor {
+    font-weight: bold;
+  }
 
-
-
-
-
-
+  button {
+    cursor: pointer;
+    padding: 8px 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
 </style>
-
 </head>
 
-
-
 <body> 
-<header>
-
-    <h1>Clube de mangá</h1>
+  <header>
+    <h1>Clube de Mangá</h1>
     <p>Conheça mais sobre a cultura dos animes</p>
-</header>
+  </header>
 
-<main>
-  <img src="imagem-blog.png" alt="Banner de site com estética cibernética e tom futurista em azul-claro e verde-neon. Quatro personagens estilo anime correm para a frente em pose de ação, rodeados por painéis de quadrinhos, textos em japonês, pequenos robôs auxiliares e a frase em inglês "Anime Explosion!".">
-    <h2>O clube de mangá mudará sua mente sobre a cultura geek</h2>
-    <p>Sejam bem vindos ao Clube de mangá, espero que você se inturme com os outros integrantes</p>
-    <P>Por Cazanti</P>
-    <button>❤️<span>0</span></button>
-</main>
+  <main>
+    <article>
+      <img src="imagem-blog.png" alt="Banner de site com estética cibernética e tom futurista em azul-claro e verde-neon. Quatro personagens estilo anime correm para a frente em pose de ação, rodeados por painéis de quadrinhos, textos em japonês, pequenos robôs auxiliares e a frase em inglês 'Anime Explosion!'.">
+      <h2>O clube de mangá mudará sua mente sobre a cultura geek</h2>
+      <p>Sejam bem-vindos ao Clube de Mangá, espero que você se inturme com os outros integrantes.</p>
+      <p class="artigo-autor">Por Cazanti</p>
+      <button>❤️ <span>0</span></button>
+    </article>
+ 
+    <article>
+      <img src="imagem.blog2.jpeg" alt="A imagem retrata o interior de uma vibrante loja ou convenção dedicada à cultura geek e otaku, imersa numa iluminação suave e moderna em tons de verde e azul-celeste. O espaço está repleto de prateleiras carregadas de coleções de mangás, balcões com diversas figuras de ação detalhadas e paredes decoradas com pôsteres em estilo anime. No centro do cenário, sob um grande cartaz que assinala a 'GEEK ZONE', um jovem de auscultadores lê atentamente um livro enquanto outros visitantes passeiam e exploram os produtos do local.">
+      <h2>O clube de mangá vai mudar sua mente sobre a cultura geek!</h2>
+      <p>Caia de cabeça nessa experiência!</p>
+      <p class="artigo-autor">Por Cazanti</p>
+      <button>❤️ <span>0</span></button>
+    </article>
+  </main>
 
+  <script>
+    const botoes = document.querySelectorAll("button");
+    
+    botoes.forEach(botao => {
+      botao.addEventListener("click", () => {
+        let texto = botao.querySelector("span");
+        texto.textContent = Number(texto.textContent) + 1;
+      });
+    });
+  </script>
 </body>
-
-<script>
-const botao = document.querySelector ("button");
-botao.addEventListener("click",botaoClicado);
-
-function botaoClicado (){
-  console.log ('fui clicado');
-  let texto = botao.querySelector("spam");
-  texto.textContent++;
-  
-}
-</script>
-
 </html>
-
 
 
 
